@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
+* {
+    font-family: "Space Mono", monospace;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fullscreen-image {
+    background: url('https://weblium.com/blog/wp-content/uploads/2019/09/photo-1533135091724-62cc5402aa20.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+#yolo{
+  font-family: "Zen Dots", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/* Add to your existing styles.css */
+
+.learn-more-btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.learn-more-btn:hover {
+    background-color: #0056b3;
+}
+
+
+.cursor {
+    cursor: pointer;
+}
+
+ /* Desktop styles */
+nav {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px; 
+    transition: background-color 0.3s; 
+}
+
+.nav-name {
+    color: #333; 
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex; 
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 10px; 
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px; 
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #f2f2f2;
+}
+
+nav.scrolled {
+    background-color: #1A1A1A; 
+}
+
+nav.scrolled .nav-name,
+nav.scrolled ul li a {
+    color: #fff; 
+}
+
+nav.scrolled ul li a:hover{
+    color: black;
+}
+
+
+
+
+
+
+section {
+    padding: 50px;
+    margin: 0px 10%;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20%;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+.scroll-to-top-btn:hover {
+    background-color: #0056b3;
+}
+.dropdown-icon {
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.section-preview {
+    margin-top: 10px;
+}
+
+
+
+.section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.active .section-content {
+    max-height: 10000px; /* Adjust this value based on the maximum height of your content */
+}
+
+
+.project-dropdown.active .dropdown-icon {
+    transform: rotate(90deg);
+}
+
+
+
+
+.section-content, .project-content {
+    border-radius: 15px; /* Adjust this value for the desired border curvature */
+    background-color: transparent; /* Transparent background initially */
+    color: white; /* White text */
+    padding: 0; /* No padding initially */
+    transition: max-height 0.8s ease-in-out, background-color 0.8s ease-in-out, padding 0.8s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Add shadow */
+}
+
+.active .section-content, .active .project-content {
+    background-color: #333; /* Dark background when active */
+    padding: 20px; /* Add padding when active */
+}
+
+
+
+
+
+
+
+.project-content {
+    display: none;
+    margin-top: 10px;
+    padding-left: 60px; /* Indent the content for visual hierarchy */
+}
+
+.project-dropdown.active .project-content {
+    display: block;
+}
+
+
+footer {
+    background-color: #f2f2f2; /* Light grey background */
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    position: relative; /* Ensure the footer is positioned relative to the body */
+    bottom: 0; /* Position the footer at the bottom */
+}
+
+footer p {
+    margin: 0;
+    color: #333;
+}
+
